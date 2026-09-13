@@ -54,7 +54,7 @@ export default function Advantages() {
             </motion.div>
           ))}
           <div className="relative rounded-[20px] overflow-hidden border border-line min-h-[220px]">
-            <img src={asset("/img/railing-terrace.webp")} alt="" className="absolute inset-0 w-full h-full object-cover" />
+            <img src={asset("/img/hinge-macro.webp")} alt="Петля на кромке закалённого стекла" className="absolute inset-0 w-full h-full object-cover" />
           </div>
         </div>
       </div>

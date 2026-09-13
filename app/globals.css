@@ -12,6 +12,7 @@
   --color-brass-2: #8fc1ee;
   --color-brass-soft: #e3eefa;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
   --animate-marquee: marquee 40s linear infinite;
   --animate-shimmer: shimmer 2.8s ease-in-out infinite;
   --animate-pulse-soft: pulseSoft 3s ease-in-out infinite;
@@ -90,3 +91,14 @@ body {
   color: transparent;
 }
 input[type="range"] { accent-color: #2f6fb0; }
+
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.outline-text {
+  -webkit-text-stroke: 1.5px rgba(15, 23, 34, 0.35);
+  color: transparent;
+}
