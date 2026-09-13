@@ -26,8 +26,7 @@ export default function BeforeAfter() {
     <section className="bg-card border-y border-line py-20 md:py-28 px-6">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.3fr] gap-10 items-center">
         <div>
-          <p className="eyebrow">До и после</p>
-          <h2 className="h2 mt-3">Что меняет одна перегородка</h2>
+          <h2 className="h2">Что меняет одна перегородка</h2>
           <p className="lead mt-4">Потяните ползунок влево и вправо. Слева — помещение как есть, справа — оно же со стеклом.</p>
 
           <div className="mt-8 space-y-3">

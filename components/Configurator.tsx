@@ -51,8 +51,7 @@ export default function Configurator() {
     <section id="quote" className="bg-paper py-20 md:py-28 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-10">
-          <p className="eyebrow">Расчёт стоимости</p>
-          <h2 className="h2 mt-3">Соберите конструкцию — получите ориентир за минуту</h2>
+          <h2 className="h2">Соберите конструкцию — получите ориентир за минуту</h2>
           <p className="lead mt-4">Ответьте на несколько вопросов, и мы отправим точный расчёт стоимости в трёх вариантах.</p>
         </div>
 

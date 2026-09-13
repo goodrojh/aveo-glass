@@ -41,8 +41,7 @@ export default function Advantages() {
     <section className="bg-card border-y border-line py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-12">
-          <p className="eyebrow">Почему Авео Гласс</p>
-          <h2 className="h2 mt-3">Пять причин, которые проверяются на объекте</h2>
+          <h2 className="h2">Пять причин, которые проверяются на объекте</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">

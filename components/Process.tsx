@@ -52,8 +52,7 @@ export default function Process() {
     <section id="process" className="bg-paper py-20 md:py-28 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-12">
-          <p className="eyebrow">Как работаем</p>
-          <h2 className="h2 mt-3">От звонка до стекла — четыре шага</h2>
+          <h2 className="h2">От звонка до стекла — четыре шага</h2>
         </div>
 
         <div className="card rounded-[28px] overflow-hidden">

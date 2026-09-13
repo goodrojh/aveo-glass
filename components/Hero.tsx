@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowDown } from "lucide-react";
-import { asset, site } from "@/lib/site";
+import { ArrowRight } from "lucide-react";
+import { asset } from "@/lib/site";
 
 /** Слово в заголовке меняется синхронно с видео: 0–10с душевая, 10–17с перегородка, 17–24с лестница */
 const phases = [
@@ -65,15 +65,8 @@ export default function Hero() {
         <span className="outline-text font-extrabold text-[150px] leading-none tracking-[-0.06em] opacity-30">AVEO</span>
       </div>
 
-      {/* Вертикальная подпись слева */}
-      <div className="hidden lg:flex absolute left-6 top-1/2 -translate-y-1/2 items-center gap-3 [writing-mode:vertical-rl] rotate-180 text-[12px] font-bold tracking-[0.3em] uppercase text-muted">
-        <span>Aveo Glass</span>
-        <span className="w-px h-10 bg-line" />
-        <span>Москва и область</span>
-      </div>
-
       {/* Контент */}
-      <div className="relative flex-1 flex flex-col justify-end px-6 lg:pl-20 pt-[120px] pb-6">
+      <div className="relative flex-1 flex flex-col justify-start px-6 pt-[110px] md:pt-[128px] pb-10">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-3">
@@ -111,30 +104,24 @@ export default function Hero() {
               </span>
             </motion.h1>
 
-            <div className="mt-8 grid md:grid-cols-[1fr_auto] gap-6 md:gap-10 items-end">
+            <div className="mt-8 flex flex-col gap-7 items-start">
               <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.25 }} className="text-[18px] md:text-[19px] leading-relaxed text-ink-2 max-w-[440px]">
-                Замер с чемоданом образцов, три варианта расчёта, производство и монтаж за один выезд.
-                <AnimatePresence mode="wait">
-                  <motion.span key={p.note} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="block mt-2 text-[15px] text-muted">
-                    {p.note}
-                  </motion.span>
-                </AnimatePresence>
+                Для уникальных интерьеров. Покрытие антиналёт. Приедем с чемоданом образцов, смонтируем за один день.
               </motion.p>
 
-              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="flex flex-col sm:flex-row gap-3">
-                <a href="#quote" className="group inline-flex items-center gap-2 rounded-full bg-ink text-white px-7 py-4 text-[16px] font-bold hover:bg-brass transition-colors whitespace-nowrap">
-                  Рассчитать стоимость
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                </a>
-                <a href={site.phoneHref} className="glass inline-flex items-center justify-center rounded-full px-7 py-4 text-[16px] font-bold text-ink hover:border-brass transition-colors whitespace-nowrap">
-                  {site.phone}
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }}>
+                <a href="#quote" className="group inline-flex items-center gap-3 rounded-full bg-ink text-white pl-8 pr-2 py-2 text-[17px] font-bold hover:bg-brass transition-colors">
+                  Получить расчёт
+                  <span className="w-11 h-11 rounded-full bg-white text-ink flex items-center justify-center transition-transform group-hover:translate-x-0.5">
+                    <ArrowRight size={18} />
+                  </span>
                 </a>
               </motion.div>
             </div>
           </div>
 
           {/* Полоса статов */}
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 border-t border-line">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 border-t border-line">
             {stats.map((s, i) => (
               <div key={i} className={"pt-4 pr-6 " + (i > 0 ? "md:border-l md:border-line md:pl-6" : "")}>
                 <p className="text-ink leading-none">
@@ -145,11 +132,6 @@ export default function Hero() {
               </div>
             ))}
           </motion.div>
-
-          <div className="mt-5 flex items-center gap-3 text-[13px] font-bold tracking-[0.14em] uppercase text-muted">
-            <a href="#catalog" className="inline-flex text-ink/50 hover:text-ink transition-colors animate-bounce"><ArrowDown size={20} /></a>
-            Листайте
-          </div>
         </div>
       </div>
     </section>

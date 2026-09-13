@@ -22,8 +22,7 @@ export default function FAQ() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
         {/* Картинка — липкая на десктопе */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="lg:sticky lg:top-28">
-          <p className="eyebrow">Вопрос — ответ</p>
-          <h2 className="h2 mt-3">Спрашивают перед заказом</h2>
+          <h2 className="h2">Спрашивают перед заказом</h2>
           <p className="lead mt-4 max-w-md">Коротко о стекле, сроках, гарантии и фурнитуре. Не нашли ответ — напишите, ответим в рабочее время за несколько минут.</p>
 
           <div className="relative mt-8 rounded-[28px] overflow-hidden card aspect-[3/4] max-h-[560px]">

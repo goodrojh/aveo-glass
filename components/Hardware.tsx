@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { DoorOpen, Ruler, Grip, CircleDot, Shield, Layers } from "lucide-react";
-import { hardwareColors } from "@/lib/site";
+import { asset, hardwareColors } from "@/lib/site";
 
 const parts = [
   { icon: <DoorOpen size={20} />, title: "Петли и коннекторы", text: "Стекло-стена и стекло-стекло, с подъёмом и без, доводчики для тяжёлых дверей." },
@@ -17,40 +17,38 @@ export default function Hardware() {
   return (
     <section id="hardware" className="bg-paper py-20 md:py-28 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-8 items-end mb-12">
-          <div>
-            <p className="eyebrow">Фурнитура</p>
-            <h2 className="h2 mt-3">Напрямую от заводов. Семь покрытий всегда в наличии</h2>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-8 items-end mb-10">
+          <h2 className="h2">Напрямую от заводов. Семь покрытий всегда в наличии</h2>
           <p className="lead lg:max-w-md lg:justify-self-end">
-            Сотрудничаем с производителями фурнитуры из России, Европы и Азии без посредников —
-            поэтому можем предложить больше вариантов с оригинальной фурнитурой и без переплат.
+            Сотрудничаем с производителями фурнитуры из России, Европы и Азии без посредников — больше вариантов с оригинальной фурнитурой и без переплат.
           </p>
         </div>
 
-        {/* Colors */}
-        <div className="card rounded-[24px] p-6 md:p-8">
-          <p className="text-[14px] font-bold text-muted mb-5">Классические цвета в наличии</p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4">
-            {hardwareColors.map((c, i) => (
-              <motion.div
-                key={c.id}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex flex-col items-center text-center gap-3"
-              >
-                <span className="w-16 h-16 rounded-full border border-ink/10 shadow-inner" style={{ background: `radial-gradient(circle at 30% 30%, ${c.hi}, ${c.color} 62%)` }} />
-                <span className="text-[14px] font-semibold text-ink leading-tight">{c.label}</span>
-              </motion.div>
-            ))}
-          </div>
-          <p className="mt-5 text-[14px] text-muted">…а также другие покрытия под заказ. Всё покажем вживую на замере.</p>
+        {/* Карточки покрытий — одна и та же петля в семи финишах */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3">
+          {hardwareColors.map((c, i) => (
+            <motion.div
+              key={c.id}
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="group card rounded-[20px] overflow-hidden hover:border-brass/60 transition-colors"
+            >
+              <div className="relative aspect-square bg-white">
+                <img src={asset(`/img/hw-${c.id}.webp`)} alt={c.label} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div className="px-3.5 py-3 flex items-center gap-2.5 border-t border-line">
+                <span className="w-4 h-4 rounded-full border border-ink/10 shrink-0" style={{ background: `radial-gradient(circle at 30% 30%, ${c.hi}, ${c.color} 62%)` }} />
+                <span className="text-[13px] font-bold text-ink leading-tight">{c.label}</span>
+              </div>
+            </motion.div>
+          ))}
         </div>
+        <p className="mt-4 text-[14px] text-muted">…а также другие покрытия под заказ. Всё покажем вживую на замере.</p>
 
-        {/* Parts */}
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Компоненты */}
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {parts.map((p, i) => (
             <motion.div
               key={p.title}

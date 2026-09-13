@@ -26,8 +26,7 @@ export default function Contact() {
     <section id="contact" className="bg-card border-t border-line py-20 md:py-28 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-start">
         <div>
-          <p className="eyebrow">Контакты</p>
-          <h2 className="h2 mt-3">Заявка на замер</h2>
+          <h2 className="h2">Заявка на замер</h2>
           <p className="lead mt-4 max-w-md">Напишите или позвоните. Заявки принимаем круглосуточно, отвечаем в рабочее время — обычно за несколько минут.</p>
 
           <div className="mt-8 space-y-4">

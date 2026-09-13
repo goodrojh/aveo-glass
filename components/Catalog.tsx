@@ -54,8 +54,7 @@ export default function Catalog() {
     <section id="catalog" className="bg-paper py-20 md:py-28 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-14">
-          <p className="eyebrow">Каталог</p>
-          <h2 className="h2 mt-3">Что делаем</h2>
+          <h2 className="h2">Что делаем</h2>
           <p className="lead mt-4">
             Три основных направления и всё, что рядом: двери, остекление саун и хаммамов, зеркала.
             Каждая конструкция показана в движении — так видно, как стекло живёт в интерьере.
@@ -77,7 +76,7 @@ export default function Catalog() {
               <div className="flex flex-col gap-6">
                 <div className="card rounded-[24px] p-7 md:p-9 flex-1 flex flex-col">
                   <div className="flex items-center justify-between gap-4">
-                    <span className="eyebrow">{c.n} — направление</span>
+                    <span className="text-[13px] font-bold text-muted">{c.n}</span>
                     <span className="rounded-full bg-brass-soft text-brass px-3.5 py-1.5 text-[14px] font-bold">{c.from}</span>
                   </div>
                   <h3 className="mt-4 text-[30px] md:text-[36px] font-extrabold tracking-tight text-ink leading-tight">{c.title}</h3>

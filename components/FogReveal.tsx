@@ -63,8 +63,7 @@ export default function FogReveal() {
     <section className="bg-paper py-20 md:py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="max-w-3xl mb-10">
-          <p className="eyebrow">Гидрофобное покрытие</p>
-          <h2 className="h2 mt-3">Протрите стекло — и узнайте, зачем оно нужно</h2>
+          <h2 className="h2">Протрите стекло — и узнайте, зачем оно нужно</h2>
           <p className="lead mt-4">Проведите по панели курсором или пальцем.</p>
         </div>
 
