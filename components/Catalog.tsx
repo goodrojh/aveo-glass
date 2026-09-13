@@ -71,15 +71,11 @@ export default function Catalog() {
               transition={{ duration: 0.5 }}
               className={"grid lg:grid-cols-[1.1fr_1fr] gap-6 " + (i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : "")}
             >
-              <VideoCard video={c.video} poster={c.poster} tag={c.n} className="lg:aspect-auto lg:min-h-[540px]" />
+              <VideoCard video={c.video} poster={c.poster} className="lg:aspect-auto lg:min-h-[540px]" />
 
               <div className="flex flex-col gap-6">
                 <div className="card rounded-[24px] p-7 md:p-9 flex-1 flex flex-col">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="text-[13px] font-bold text-muted">{c.n}</span>
-                    <span className="rounded-full bg-brass-soft text-brass px-3.5 py-1.5 text-[14px] font-bold">{c.from}</span>
-                  </div>
-                  <h3 className="mt-4 text-[30px] md:text-[36px] font-extrabold tracking-tight text-ink leading-tight">{c.title}</h3>
+                  <h3 className="text-[30px] md:text-[36px] font-extrabold tracking-tight text-ink leading-tight">{c.title}</h3>
                   <p className="mt-4 text-[17px] text-ink-2 leading-relaxed">{c.text}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {c.kinds.map((k) => (

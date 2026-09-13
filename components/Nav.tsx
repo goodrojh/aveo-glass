@@ -26,7 +26,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-48px)] max-w-7xl">
       <motion.nav initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.7 }}>
         <div className={"glass relative flex items-center justify-between rounded-full px-3 py-2 transition-shadow duration-500 " + (scrolled ? "shadow-[0_16px_50px_-12px_rgba(21,22,26,0.25)]" : "")}>
           <a href="#top" className="flex items-center pl-2">

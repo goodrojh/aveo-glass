@@ -5,9 +5,8 @@ const items = [
   "Срочно — от 5 дней",
   "Гарантия 1 год",
   "Москва и область",
-  "Заявки 24/7",
   "Фурнитура от заводов-изготовителей",
-  "3 варианта расчёта",
+  "Покрытие антиналёт",
 ];
 
 export default function Marquee() {
@@ -16,9 +15,9 @@ export default function Marquee() {
     <div className="relative border-y border-line bg-card overflow-hidden py-4">
       <div className="flex w-max animate-marquee will-change-transform">
         {row.map((t, i) => (
-          <span key={i} className="flex items-center gap-6 px-6 text-[14px] font-bold tracking-[0.1em] uppercase text-ink-2 whitespace-nowrap">
+          <span key={i} className="flex items-center gap-8 px-8 text-[13px] font-semibold tracking-[0.12em] uppercase text-muted whitespace-nowrap">
             {t}
-            <span className="w-1.5 h-1.5 rounded-full bg-brass" />
+            <span className="w-px h-3.5 bg-line" />
           </span>
         ))}
       </div>

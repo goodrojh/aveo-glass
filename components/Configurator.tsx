@@ -19,6 +19,16 @@ const products: { id: Product; label: string; icon: React.ReactNode; from: numbe
 const glassK: Record<string, number> = { clear: 1, ultra: 1.12, grey: 1.18, bronze: 1.18, matte: 1.22, reeded: 1.35 };
 const hwK: Record<string, number> = { chrome: 0.95, "chrome-matte": 1, black: 1, gold: 1.2, brass: 1.2, graphite: 1.08, bronze: 1.15 };
 
+/** Вынесен из компонента: внутри него React пересоздавал бы тип на каждый рендер, и ползунок терял бы захват при перетаскивании */
+function Step({ n, title, children }: { n: string; title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="text-[14px] font-bold text-muted mb-3"><span className="text-brass">{n}</span> — {title}</p>
+      {children}
+    </div>
+  );
+}
+
 export default function Configurator() {
   const [product, setProduct] = useState<Product>("shower");
   const [kind, setKind] = useState("static");
@@ -39,13 +49,6 @@ export default function Configurator() {
   const hc = hardwareColors.find((x) => x.id === hw)!;
   const summary = `${p.label} · ${p.kinds.find((x) => x.id === kind)?.label} · стекло ${gl.label.toLowerCase()} · фурнитура ${hc.label.toLowerCase()} · ширина ${width.toFixed(1)} м · ориентир от ${estimate.toLocaleString("ru-RU")} ₽`;
   const tgHref = `${site.telegram}?text=${encodeURIComponent("Здравствуйте! Хочу расчёт: " + summary)}`;
-
-  const Step = ({ n, title, children }: { n: string; title: string; children: React.ReactNode }) => (
-    <div>
-      <p className="text-[14px] font-bold text-muted mb-3"><span className="text-brass">{n}</span> — {title}</p>
-      {children}
-    </div>
-  );
 
   return (
     <section id="quote" className="bg-paper py-20 md:py-28 px-6 scroll-mt-20">

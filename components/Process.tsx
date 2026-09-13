@@ -80,8 +80,7 @@ export default function Process() {
                 className="grid lg:grid-cols-[1fr_1fr] gap-10 items-center"
               >
                 <div>
-                  <span className="inline-block rounded-full bg-brass-soft text-brass px-4 py-1.5 text-[13px] font-bold tracking-[0.08em] uppercase">{s.badge}</span>
-                  <h3 className="mt-5 text-[28px] md:text-[36px] font-extrabold text-ink leading-[1.15] tracking-tight">{s.heading}</h3>
+                  <h3 className="text-[28px] md:text-[36px] font-extrabold text-ink leading-[1.15] tracking-tight">{s.heading}</h3>
                   <p className="mt-5 text-[17px] text-ink-2 leading-relaxed">{s.text}</p>
                   <ul className="mt-6 space-y-2.5">
                     {s.facts.map((f) => (
@@ -103,11 +102,6 @@ export default function Process() {
 
                 <div className="relative aspect-[4/3] rounded-[24px] overflow-hidden border border-line">
                   <img src={asset(s.image)} alt="" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute bottom-4 right-4 flex gap-1.5">
-                    {steps.map((_, i) => (
-                      <span key={i} className={"h-2 rounded-full transition-all " + (i === active ? "w-8 bg-brass" : "w-2 bg-white/80")} />
-                    ))}
-                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>
