@@ -5,17 +5,18 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { asset } from "@/lib/site";
 
-/** Слово в заголовке меняется синхронно с видео: 0–10с душевая, 10–17с перегородка, 17–24с лестница */
+/** Слово меняется, когда в видео собрался очередной объект: душевая ~0–14с, перегородка ~14–21с, лестница ~21–24с */
 const phases = [
-  { until: 10.2, word: "для душевой" },
-  { until: 17.2, word: "для перегородки" },
+  { until: 13.8, word: "для душевой" },
+  { until: 20.8, word: "для перегородки" },
   { until: 99, word: "для лестницы" },
 ];
 
-const stats = [
-  { v: "12–18", u: "дней", l: "производство" },
-  { v: "1", u: "год", l: "гарантия" },
-  { v: "7", u: "покрытий", l: "фурнитуры" },
+const facts = [
+  { v: "12–18 дней", l: "производство, срочно от 5" },
+  { v: "1 год", l: "гарантия на стекло, фурнитуру и монтаж" },
+  { v: "1 день", l: "монтаж за один выезд" },
+  { v: "Замер с образцами", l: "стекло и фурнитура вживую" },
 ];
 
 export default function Hero() {
@@ -39,7 +40,7 @@ export default function Hero() {
     <section id="top" className="relative min-h-[100svh] flex flex-col bg-white overflow-hidden">
       {/* Видео справа */}
       <div className="absolute inset-0">
-        <div className="absolute inset-y-0 right-0 w-full lg:w-[66%]">
+        <div className="absolute top-0 bottom-[88px] right-0 w-full lg:w-[66%]">
           <video
             ref={videoRef}
             key={src}
@@ -60,7 +61,7 @@ export default function Hero() {
       </div>
 
       {/* Контент */}
-      <div className="relative flex-1 flex flex-col justify-center px-6 pt-[110px] md:pt-[120px] pb-10">
+      <div className="relative flex-1 flex flex-col justify-center px-6 pt-[110px] md:pt-[120px] pb-12">
         <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-3xl">
 
@@ -93,25 +94,29 @@ export default function Hero() {
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="flex flex-col gap-8">
-                <a href="#quote" className="group inline-flex items-center gap-3 rounded-full bg-ink text-white pl-8 pr-2 py-2 text-[17px] font-bold hover:bg-brass transition-colors">
+                <a href="#quote" className="group self-start inline-flex items-center gap-3 rounded-full bg-ink text-white pl-8 pr-2 py-2 text-[17px] font-bold hover:bg-brass transition-colors">
                   Получить расчёт
                   <span className="w-11 h-11 rounded-full bg-white text-ink flex items-center justify-center transition-transform group-hover:translate-x-0.5">
                     <ArrowRight size={18} />
                   </span>
                 </a>
-                <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[14px] text-muted">
-                  {stats.map((st) => (
-                    <li key={st.l} className="flex items-baseline gap-1.5">
-                      <span className="text-ink font-bold text-[15px]">{st.v} {st.u}</span>
-                      <span>{st.l}</span>
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Полоса фактов — на всю ширину, под видео */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative border-t border-line bg-white/90 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
+          {facts.map((f, i) => (
+            <div key={f.v} className={"py-5 md:py-6 " + (i > 0 ? "md:pl-8 md:border-l md:border-line" : "") + (i > 0 ? " pl-4 md:pl-8" : "")}>
+              <p className="text-[17px] md:text-[19px] font-extrabold tracking-tight text-ink leading-none">{f.v}</p>
+              <p className="mt-1.5 text-[13px] md:text-[14px] text-muted leading-snug">{f.l}</p>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

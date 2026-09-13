@@ -97,13 +97,26 @@ export default function Catalog() {
           ))}
         </div>
 
-        <div className="mt-10 card rounded-[24px] p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-          <p className="text-[17px] font-bold text-ink shrink-0">Также делаем:</p>
-          <div className="flex flex-wrap gap-2">
-            {["Стеклянные двери", "Остекление саун, бань и хаммамов", "Зеркала и зеркальные панно", "Козырьки", "Полки и столешницы", "Изделия по эскизу"].map((t) => (
-              <span key={t} className="rounded-full bg-paper border border-line px-4 py-2 text-[15px] font-medium text-ink-2">{t}</span>
-            ))}
+        <div className="mt-16 md:mt-20 grid lg:grid-cols-[260px_1fr] gap-6 lg:gap-12 items-start">
+          <div>
+            <h3 className="text-[26px] md:text-[30px] font-extrabold tracking-tight text-ink leading-tight">Также делаем</h3>
+            <p className="mt-2 text-[15px] text-ink-2">Всё, что из закалённого стекла.</p>
           </div>
+          <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-8">
+            {[
+              ["Стеклянные двери", "распашные, маятниковые, раздвижные"],
+              ["Сауны, бани, хаммамы", "термостойкое остекление"],
+              ["Зеркала и панно", "с подсветкой и без"],
+              ["Козырьки", "на точечных креплениях"],
+              ["Полки и столешницы", "закалённое стекло 8–12 мм"],
+              ["Изделия по эскизу", "нестандартные формы и резы"],
+            ].map(([t, d]) => (
+              <li key={t} className="py-4 border-b border-line">
+                <p className="text-[16px] font-bold text-ink">{t}</p>
+                <p className="mt-0.5 text-[14px] text-muted">{d}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
