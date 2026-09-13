@@ -1,92 +1,69 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { asset } from "@/lib/site";
+import { Check } from "lucide-react";
 
 const tiers = [
   {
     name: "Эконом",
     price: "от 15 000 ₽",
-    text: "Статичная душевая шторка или простая перегородка. Прозрачное стекло 8 мм, хром или чёрный профиль.",
-    features: ["Закалённое стекло 8 мм", "Хром / чёрный мат", "Стандартные петли и профиль", "Монтаж 2 часа"],
-    dark: false,
+    text: "Статичная душевая шторка. Прозрачное закалённое стекло 8 мм, хром или чёрный матовый профиль.",
+    features: ["Закалённое стекло 8 мм", "Хром / чёрный матовый", "Настенный профиль", "Монтаж за один выезд"],
   },
   {
     name: "Оптимум",
-    price: "от 28 000 ₽",
-    text: "Распашные и раздвижные душевые, перегородки с дверью, ограждения лестниц. Любой цвет стекла.",
-    features: ["Стекло 8–10 мм, любой оттенок", "6 покрытий фурнитуры", "Доводчики, магнитные уплотнители", "Гидрофобное покрытие в подарок"],
-    dark: false,
+    price: "по расчёту",
+    text: "Распашные и раздвижные душевые, перегородки с дверью, ограждения лестниц. Любой из 4 цветов стекла.",
+    features: ["Любой цвет стекла, в т.ч. матовый", "7 покрытий фурнитуры", "Доводчики, магнитные уплотнители", "Штанги жёсткости в цвет"],
     highlight: true,
   },
   {
     name: "Премиум",
-    price: "индивидуально",
-    text: "Безрамные ограждения, лофт-перегородки с раскладкой, рифлёное и осветлённое стекло, нестандартные формы.",
-    features: ["Optiwhite, рифлёное, тонированное", "Точечные крепления, скрытый профиль", "Латунь, золото, бронза", "Персональный менеджер проекта"],
-    dark: true,
+    price: "по расчёту",
+    text: "Цельностеклянные ограждения на точечных креплениях, лофт-перегородки с раскладкой, рифлёное стекло, нестандартные формы.",
+    features: ["Рифлёное, осветлённое, тонированное", "Точечные крепления, скрытый профиль", "Латунь, золото, бронза античная", "Изделия по эскизу дизайнера"],
   },
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="relative bg-ink-2 py-24 md:py-32 px-6 scroll-mt-20">
+    <section id="pricing" className="bg-card border-y border-line py-20 md:py-28 px-6 scroll-mt-20">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-[12px] font-bold tracking-[0.22em] uppercase text-brass">Цены</p>
-          <h2 className="mt-3 text-[40px] md:text-[56px] font-extrabold tracking-[-0.03em] leading-[1.02] text-white">
-            Три комплектации.
-            <br />
-            <span className="text-white/40">Без скрытых доплат.</span>
-          </h2>
-          <p className="mt-4 text-white/60 max-w-lg mx-auto">
-            После замера вы получаете все три варианта с точной суммой. Выбираете сами — мы не навязываем.
+        <div className="max-w-3xl mb-12">
+          <p className="eyebrow">Цены</p>
+          <h2 className="h2 mt-3">Три комплектации — три варианта расчёта</h2>
+          <p className="lead mt-4">
+            Стоимость экономичных душевых перегородок начинается от 15 000 рублей. После замера вы получаете все три варианта с точными суммами и подробным описанием — выбираете сами.
           </p>
         </div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
-          className="grid lg:grid-cols-3 gap-5"
-        >
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }} className="grid lg:grid-cols-3 gap-5">
           {tiers.map((t) => (
             <motion.div
               key={t.name}
-              variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }}
-              className={"relative rounded-[28px] p-8 flex flex-col justify-between min-h-[520px] overflow-hidden " + (t.dark ? "" : "glass glass-edge") + (t.highlight ? " ring-1 ring-brass/60" : "")}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              className={"relative rounded-[24px] p-8 flex flex-col " + (t.highlight ? "bg-ink text-white" : "bg-paper border border-line")}
             >
-              {t.dark && (
-                <>
-                  <img src={asset("/img/partition-wardrobe.webp")} alt="" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-ink/75" />
-                </>
-              )}
-              {t.highlight && (
-                <span className="absolute top-5 right-5 bg-brass text-ink rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em]">Выбирают чаще</span>
-              )}
-              <div className="relative z-10">
-                <h3 className="text-[26px] font-bold text-white">{t.name}</h3>
-                <p className="mt-2 text-[14px] text-white/65 leading-relaxed">{t.text}</p>
-                <div className="mt-6 text-[40px] font-extrabold tracking-tight text-white">{t.price}</div>
-                <div className="my-6 h-px w-full bg-white/10" />
-                <ul className="space-y-2.5">
-                  {t.features.map((f) => (
-                    <li key={f} className="flex items-center gap-3 text-[15px] text-white/80">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brass shrink-0" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <a href="#quote" className={"relative z-10 mt-10 inline-flex justify-center rounded-2xl px-7 py-4 text-[15px] font-bold transition-all hover:scale-[1.02] " + (t.highlight ? "bg-brass text-ink hover:bg-brass-2" : "bg-mist text-ink hover:bg-white")}>
+              {t.highlight && <span className="absolute top-6 right-6 bg-brass text-white rounded-full px-3 py-1 text-[12px] font-bold uppercase tracking-[0.1em]">Выбирают чаще</span>}
+              <h3 className={"text-[26px] font-extrabold " + (t.highlight ? "text-white" : "text-ink")}>{t.name}</h3>
+              <p className={"mt-2 text-[16px] leading-relaxed " + (t.highlight ? "text-white/80" : "text-ink-2")}>{t.text}</p>
+              <div className={"mt-6 text-[38px] font-extrabold tracking-tight " + (t.highlight ? "text-white" : "text-ink")}>{t.price}</div>
+              <div className={"my-6 h-px w-full " + (t.highlight ? "bg-white/15" : "bg-line")} />
+              <ul className="space-y-3 flex-1">
+                {t.features.map((f) => (
+                  <li key={f} className={"flex items-start gap-3 text-[16px] " + (t.highlight ? "text-white/90" : "text-ink")}>
+                    <Check size={18} className="text-brass mt-0.5 shrink-0" /> {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="#quote" className={"mt-8 inline-flex justify-center rounded-full px-7 py-4 text-[16px] font-bold transition-colors " + (t.highlight ? "bg-brass text-white hover:bg-brass-2" : "bg-ink text-white hover:bg-brass")}>
                 Получить расчёт
               </a>
             </motion.div>
           ))}
         </motion.div>
-        <p className="mt-6 text-center text-[12px] text-white/40">
-          Стоимость зависит от размеров, типа стекла и фурнитуры. Точная цена фиксируется в договоре после замера.
+        <p className="mt-6 text-[14px] text-muted max-w-3xl">
+          Итоговая стоимость зависит от размеров, типа конструкции, цвета стекла и фурнитуры. Точная цена фиксируется в договоре после замера. Действуют программы скидок и подарков при заказе.
         </p>
       </div>
     </section>
