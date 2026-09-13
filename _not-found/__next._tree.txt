@@ -1,0 +1,2 @@
+:HL["/aveo-glass/_next/static/chunks/08g76eb5f1kxh.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"m9YZx6DUm2O1X_OQv64Om"}

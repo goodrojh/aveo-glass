@@ -1,0 +1,7 @@
+:HL["/aveo-glass/_next/static/chunks/08g76eb5f1kxh.css","style"]
+:HL["/aveo-glass/_next/static/media/591574edbe85c69b-s.p.2cu8l7zf4s4ec.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/aveo-glass/_next/static/media/8bd76523131fa0fc-s.p.1pvupmngxrt5z.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/aveo-glass/_next/static/media/a343f882a40d2cc9-s.p.1sj6eobyi31rd.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/aveo-glass/_next/static/media/d3fe2f289711ac3f-s.p.1l2zhvq5eocqf.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/aveo-glass/img/logo.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"m9YZx6DUm2O1X_OQv64Om"}
