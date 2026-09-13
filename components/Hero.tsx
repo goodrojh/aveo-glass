@@ -40,7 +40,7 @@ export default function Hero() {
     <section id="top" className="relative min-h-[100svh] flex flex-col bg-white overflow-hidden">
       {/* Видео справа */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 bottom-[88px] right-0 w-full lg:w-[66%]">
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[66%]">
           <video
             ref={videoRef}
             key={src}
@@ -107,7 +107,7 @@ export default function Hero() {
       </div>
 
       {/* Полоса фактов — на всю ширину, под видео */}
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative border-t border-line bg-white/90 backdrop-blur">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className="relative -mt-px border-t border-line bg-white">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
           {facts.map((f, i) => (
             <div key={f.v} className={"py-5 md:py-6 " + (i > 0 ? "md:pl-8 md:border-l md:border-line" : "") + (i > 0 ? " pl-4 md:pl-8" : "")}>
