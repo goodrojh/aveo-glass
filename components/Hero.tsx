@@ -1,26 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Clock, Briefcase, ArrowRight, ArrowDown } from "lucide-react";
 import { asset, site } from "@/lib/site";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  // 1440p для больших экранов, 1080p для остальных
+  const [src, setSrc] = useState("/video/hero-assembly.mp4");
+
+  useEffect(() => {
+    if (window.innerWidth >= 1280 && window.devicePixelRatio >= 1) setSrc("/video/hero-assembly-2k.mp4");
+  }, []);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+    v.load();
     v.play().catch(() => {});
-  }, []);
+  }, [src]);
 
   return (
     <section id="top" className="relative min-h-[100svh] flex flex-col bg-white overflow-hidden">
       <div className="absolute inset-0">
         {/* на десктопе видео занимает правые 2/3, объект оказывается справа от текста; студия белая — края сливаются */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[68%]">
-          <video ref={videoRef} autoPlay muted loop playsInline poster={asset("/img/hero-assembly.webp")} className="absolute inset-0 w-full h-full object-cover object-center opacity-55 lg:opacity-100">
-            <source src={asset("/video/hero-assembly.mp4")} type="video/mp4" />
+          {/* object-contain: кадр целиком, без обрезки по вертикали; студия белая, поля не видны */}
+          <video ref={videoRef} key={src} autoPlay muted loop playsInline poster={asset("/img/hero-assembly.webp")} className="absolute inset-0 w-full h-full object-contain object-center opacity-55 lg:opacity-100">
+            <source src={asset(src)} type="video/mp4" />
           </video>
           <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent hidden lg:block" />
         </div>
