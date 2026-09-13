@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f7f5f1;
-  --color-paper-2: #efece6;
+  --color-paper: #f3f6f9;
+  --color-paper-2: #e9eef3;
   --color-card: #ffffff;
-  --color-ink: #15161a;
-  --color-ink-2: #3a3d44;
-  --color-muted: #6b6f78;
-  --color-line: #e4e0d8;
-  --color-brass: #b8863b;
-  --color-brass-2: #d9a45b;
-  --color-brass-soft: #f4ead9;
+  --color-ink: #0f1722;
+  --color-ink-2: #3a4657;
+  --color-muted: #66748a;
+  --color-line: #d9e1ea;
+  --color-brass: #2f6fb0;
+  --color-brass-2: #8fc1ee;
+  --color-brass-soft: #e3eefa;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --animate-marquee: marquee 40s linear infinite;
   --animate-shimmer: shimmer 2.8s ease-in-out infinite;
@@ -40,7 +40,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-::selection { background: rgba(184, 134, 59, 0.25); }
+::selection { background: rgba(47, 111, 176, 0.22); }
 
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -48,12 +48,12 @@ body {
 /* Frosted white glass */
 .glass {
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(21, 22, 26, 0.08);
+  border: 1px solid rgba(15, 23, 34, 0.08);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
 }
 .glass-dark {
-  background: rgba(21, 22, 26, 0.45);
+  background: rgba(15, 23, 34, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -62,7 +62,7 @@ body {
 .card {
   background: var(--color-card);
   border: 1px solid var(--color-line);
-  box-shadow: 0 1px 2px rgba(21, 22, 26, 0.04), 0 12px 40px -20px rgba(21, 22, 26, 0.18);
+  box-shadow: 0 1px 2px rgba(15, 23, 34, 0.04), 0 12px 40px -20px rgba(15, 23, 34, 0.18);
 }
 .eyebrow {
   font-size: 13px;
@@ -84,9 +84,9 @@ body {
   color: var(--color-ink-2);
 }
 .brass-gradient {
-  background: linear-gradient(120deg, #d9a45b 0%, #b8863b 50%, #8f6527 100%);
+  background: linear-gradient(120deg, #7fb6e8 0%, #2f6fb0 50%, #1f4f84 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-input[type="range"] { accent-color: #b8863b; }
+input[type="range"] { accent-color: #2f6fb0; }
