@@ -8,7 +8,6 @@ import BeforeAfter from "@/components/BeforeAfter";
 import Process from "@/components/Process";
 import Advantages from "@/components/Advantages";
 import FogReveal from "@/components/FogReveal";
-import Pricing from "@/components/Pricing";
 import Designers from "@/components/Designers";
 import FAQ from "@/components/FAQ";
 import Configurator from "@/components/Configurator";
@@ -29,7 +28,6 @@ export default function Home() {
       <Process />
       <Advantages />
       <FogReveal />
-      <Pricing />
       <Designers />
       <FAQ />
       <Configurator />

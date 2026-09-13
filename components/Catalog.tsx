@@ -12,11 +12,11 @@ const categories = [
     text: "Четыре типа: статичные (неподвижное стекло от брызг), распашные с 1–2 дверями, раздвижные и «гармошка» со складывающимися дверями. Закалённое стекло 8 мм, любой цвет фурнитуры.",
     from: "от 15 000 ₽",
     kinds: ["Статичные", "Распашные", "Раздвижные", "Гармошка"],
-    video: "/video/shower-dryfloor.mp4",
-    poster: "/img/shower-dryfloor.webp",
+    video: "/video/shower-dawn.mp4",
+    poster: "/img/shower-dawn.webp",
     more: [
       { video: "/video/shower-reeded.mp4", poster: "/img/shower-reeded.webp" },
-      { video: "/video/shower-assemble.mp4", poster: "/img/shower-corner-empty.webp" },
+      { video: "/video/shower-dryfloor.mp4", poster: "/img/shower-dryfloor.webp" },
     ],
   },
   {
@@ -30,7 +30,7 @@ const categories = [
     poster: "/img/partition-office.webp",
     more: [
       { video: "/video/partition-wardrobe.mp4", poster: "/img/partition-wardrobe.webp" },
-      { video: "/video/partition-assemble.mp4", poster: "/img/partition-kitchen.webp" },
+      { video: "/video/partition-bath.mp4", poster: "/img/partition-bath.webp" },
     ],
   },
   {
@@ -44,7 +44,7 @@ const categories = [
     poster: "/img/railing-pool.webp",
     more: [
       { video: "/video/railing-stairs.mp4", poster: "/img/railing-stairs.webp" },
-      { video: "/video/railing-balcony.mp4", poster: "/img/railing-balcony.webp" },
+      { video: "/video/railing-sunset.mp4", poster: "/img/railing-terrace.webp" },
     ],
   },
 ];
@@ -58,7 +58,7 @@ export default function Catalog() {
           <h2 className="h2 mt-3">Что делаем</h2>
           <p className="lead mt-4">
             Три основных направления и всё, что рядом: двери, остекление саун и хаммамов, зеркала.
-            Наведите на видео — каждая конструкция показана в движении.
+            Каждая конструкция показана в движении — так видно, как стекло живёт в интерьере.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function Catalog() {
               transition={{ duration: 0.5 }}
               className={"grid lg:grid-cols-[1.1fr_1fr] gap-6 " + (i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : "")}
             >
-              <VideoCard video={c.video} poster={c.poster} tag={c.n} className="lg:aspect-auto lg:min-h-[540px]" autoplayInView />
+              <VideoCard video={c.video} poster={c.poster} tag={c.n} className="lg:aspect-auto lg:min-h-[540px]" />
 
               <div className="flex flex-col gap-6">
                 <div className="card rounded-[24px] p-7 md:p-9 flex-1 flex flex-col">

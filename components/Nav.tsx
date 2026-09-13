@@ -11,7 +11,6 @@ const links = [
   { label: "Стекло", href: "#glass" },
   { label: "Фурнитура", href: "#hardware" },
   { label: "Как работаем", href: "#process" },
-  { label: "Цены", href: "#pricing" },
   { label: "Вопросы", href: "#faq" },
 ];
 
