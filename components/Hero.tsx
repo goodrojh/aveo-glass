@@ -14,12 +14,6 @@ export default function Hero() {
     if (window.innerWidth >= 1280 && window.devicePixelRatio >= 1) setSrc("/video/hero-assembly-2k.mp4");
   }, []);
 
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.load();
-    v.play().catch(() => {});
-  }, [src]);
 
   return (
     <section id="top" className="relative min-h-[100svh] flex flex-col bg-white overflow-hidden">
@@ -27,7 +21,7 @@ export default function Hero() {
         {/* на десктопе видео занимает правые 2/3, объект оказывается справа от текста; студия белая — края сливаются */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-[68%]">
           {/* object-contain: кадр целиком, без обрезки по вертикали; студия белая, поля не видны */}
-          <video ref={videoRef} key={src} autoPlay muted loop playsInline poster={asset("/img/hero-assembly.webp")} className="absolute inset-0 w-full h-full object-contain object-center opacity-55 lg:opacity-100">
+          <video ref={videoRef} key={src} autoPlay muted loop playsInline onLoadedData={(e) => e.currentTarget.play().catch(() => {})} poster={asset("/img/hero-assembly.webp")} className="absolute inset-0 w-full h-full object-contain object-center opacity-55 lg:opacity-100">
             <source src={asset(src)} type="video/mp4" />
           </video>
           <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-white to-transparent hidden lg:block" />
